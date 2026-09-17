@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Satlas · Footprint review</title><link rel="stylesheet" href="vendor/leaflet.css"><link rel="stylesheet" href="style.css"></head>
+<body>
+<main><aside><h1>Three scenes.<br>One trained model.</h1><p>Explore the predictions and compare the original shapes with regularized footprints.</p>
+<label for="scene">Image</label><select id="scene"></select>
+<div class="stats"><div><strong id="count">—</strong><span>predicted buildings</span></div><div><strong id="area">—</strong><span>km² valid coverage</span></div></div>
+<fieldset><legend>Footprints</legend><label><input type="radio" name="mode" value="raw" checked> <i class="swatch raw"></i> Original shapes</label><label><input type="radio" name="mode" value="regularized"> <i class="swatch reg"></i> Regularized · 0.3 m</label><label><input type="radio" name="mode" value="both"> Both</label><label><input type="radio" name="mode" value="none"> Imagery only</label></fieldset>
+<label for="opacity">Footprint fill opacity</label><input id="opacity" type="range" min="0" max="0.65" step="0.05" value="0.15">
+<button id="fit">Fit area</button>
+<p class="small">Drag to pan · scroll or use +/− to zoom · select a footprint for details. No external basemap or online inference.</p></aside>
+<section class="mapwrap"><div id="map" aria-label="Interactive georeferenced footprint map"></div><div id="status" role="status">Loading local results…</div><div class="mapnote">Source RGB preview · georeferenced · north up</div></section></main>
+<script src="vendor/leaflet.js"></script><script src="data/scenes.js"></script><script src="app.js"></script></body></html>
